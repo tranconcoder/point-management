@@ -1,13 +1,11 @@
-import avatar from '../../../assets/images/avatar.jpg';
-import { Avatar, AvatarContainer, InfoContainer, Wrapper } from './styles';
+import HomePageAvatar from "../HomePageAvatar";
+import { InfoContainer, Wrapper } from "./styles";
 
 export default function HomePageContent() {
 	return (
 		<Wrapper>
 			<InfoContainer>
-				<AvatarContainer>
-					<Avatar src={avatar} />
-				</AvatarContainer>
+				<HomePageAvatar />
 			</InfoContainer>
 		</Wrapper>
 	);
