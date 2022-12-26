@@ -34,13 +34,15 @@ export const flex = (
 	flexDirection: CSSProperties["flexDirection"] = "row",
 	alignItems: CSSProperties["alignItems"] = "flex-start",
 	justifyContent: CSSProperties["justifyContent"] = "flex-start",
-	isInline: boolean = false
+	isInline: boolean = false,
+	gapSize?: [string] | [string, string]
 ) =>
 	propertiesToString({
 		display: isInline ? "inline-flex" : "flex",
 		flexDirection,
 		alignItems,
 		justifyContent,
+		gap: gapSize && (gapSize[1] ? gapSize.join(" ") : gapSize[0]),
 	});
 
 export const position = (

@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
      html {
-          font-family: 'Roboto', sans-serif;
+          font-family: 'Poppins', sans-serif;
      }
 `;
 
