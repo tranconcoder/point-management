@@ -33,8 +33,9 @@ export const Button = styled.button<ButtonProps>`
 	--color: rgb(237, 237, 237);
 	--hover-color: ${(props) => props.color || "var(--primary-color)"};
 
-	${mixins.text("#555555", "1.4rem", "500")}
+	${mixins.text("#555555", "1.2rem", "500", null, "2rem")}
 
+	font-family: 'Roboto', sans-serif;
 	display: block;
 	border-radius: 0.8rem;
 	border: 0.15rem solid var(--color);
@@ -44,6 +45,8 @@ export const Button = styled.button<ButtonProps>`
 
 	&:hover {
 		${mixins.text("var(--white-color)")}
+
+		cursor: pointer;
 		background-color: var(--hover-color);
 		border-color: var(--hover-color);
 	}
@@ -54,5 +57,9 @@ export const ChangeAvatarButton = styled(Button).attrs({
 })``;
 
 export const ResetAvatarButton = styled(Button).attrs({
-	color: "#FFC700",
-});
+	color: "rgb(241, 55, 55)",
+})``;
+
+export const SaveAvatarButton = styled(Button).attrs({
+	color: "rgb(43, 198, 11)",
+})``;

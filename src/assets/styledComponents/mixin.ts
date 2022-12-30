@@ -69,8 +69,8 @@ export const text = (
 ) =>
 	propertiesToString({
 		color,
-		fontSize,
-		fontWeight,
-		textAlign,
-		lineHeight,
+		fontSize: fontSize || null,
+		fontWeight: fontWeight || null,
+		textAlign: textAlign || null,
+		lineHeight: lineHeight || null,
 	});
