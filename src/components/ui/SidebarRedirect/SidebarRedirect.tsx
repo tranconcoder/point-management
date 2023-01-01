@@ -1,19 +1,19 @@
-import { useLocation } from 'react-router-dom';
-import { routesArray } from '../../../routes';
-import { Route } from '../../../types/routes';
+import { useLocation } from "react-router-dom";
+import { routesArray } from "../../../routes";
+import { Route } from "../../../types/routes";
 import {
 	RedirectContainer,
 	RedirectItem,
 	RedirectList,
 	SidebarRedirectContainer,
-} from './styles';
+} from "./styles";
 
 export default function SidebarRedirect() {
 	const redirectLinkList: Array<string> = [
-		'/',
-		'/auth',
-		'/auth/login',
-		'/auth/register',
+		"/",
+		"/auth",
+		"/auth/login",
+		"/auth/register",
 	];
 	const redirectLinkInfoList: Array<Route> = routesArray.filter(({ path }) =>
 		redirectLinkList.includes(path)
@@ -26,7 +26,8 @@ export default function SidebarRedirect() {
 				<RedirectList>
 					{redirectLinkInfoList.map(({ icon, title, path }) => (
 						<RedirectItem
-							active={path === location.pathname}
+							key={path}
+							active={+(path === location.pathname) as any}
 							to={path}
 						>
 							{icon}

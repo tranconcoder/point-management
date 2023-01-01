@@ -15,8 +15,6 @@ export default function HomePageAvatar() {
 	const [avatarView, setAvatarView] = useState(avatarApplied);
 	const isChanged = avatarApplied !== avatarView;
 
-	console.log(avatarView);
-
 	const handleChangeAvatar = (e: any) => {
 		const fileImage = e.target.files[0] as File;
 		const imageLink = URL.createObjectURL(fileImage);
