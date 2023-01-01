@@ -1,5 +1,10 @@
 import HomePageAvatar from "../HomePageAvatar";
-import { InfoContainer, Wrapper } from "./styles";
+import {
+	FormInfoContainer,
+	InfoContainer,
+	PersonalInfoTitle,
+	Wrapper,
+} from "./styles";
 
 export default function HomePageContent() {
 	return (
@@ -7,6 +12,10 @@ export default function HomePageContent() {
 			<InfoContainer>
 				<HomePageAvatar />
 			</InfoContainer>
+
+			<FormInfoContainer>
+				<PersonalInfoTitle>#Thông tin cá nhân</PersonalInfoTitle>
+			</FormInfoContainer>
 		</Wrapper>
 	);
 }

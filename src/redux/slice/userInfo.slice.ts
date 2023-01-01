@@ -1,3 +1,4 @@
+import defaultAvatar from "../../assets/images/avatar.jpg";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
@@ -14,7 +15,7 @@ export interface UserInfoSlice {
 
 const initialState: UserInfoSlice = {
 	id: "",
-	avatar: "",
+	avatar: defaultAvatar,
 	name: {
 		firstName: "",
 		lastName: "",
@@ -40,3 +41,7 @@ export const userInfoSlice = createSlice({
 		},
 	},
 });
+
+export const { setInfo } = userInfoSlice.actions;
+
+export default userInfoSlice.reducer;

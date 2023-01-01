@@ -1,4 +1,3 @@
-import type { HTMLAttributes, ReactNode } from "react";
 import styled from "styled-components";
 import { mixins } from "../../../assets/styledComponents";
 
@@ -18,7 +17,7 @@ export const Avatar = styled.img`
 
 export const ButtonContainer = styled.div`
 	${mixins.flex("row", "center", "center", false, ["1rem"])}
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 `;
 
 export const AvatarInput = styled.input.attrs({ type: "file", hidden: true })`

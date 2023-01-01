@@ -7,11 +7,17 @@ import {
 	ResetAvatarButton,
 	SaveAvatarButton,
 } from "./styles";
-import avatar from "../../../assets/images/avatar.jpg";
 import { Fragment, useState } from "react";
+import {
+	useAppDispatch,
+	useAppSelector,
+} from "../../../hooks/redux-toolkit.hook";
+import { setInfo } from "../../../redux/slice/userInfo.slice";
 
 export default function HomePageAvatar() {
-	const [avatarApplied, setAvatarApplied] = useState(avatar);
+	const dispatch = useAppDispatch();
+
+	const avatarApplied = useAppSelector((state) => state.userInfo.avatar);
 	const [avatarView, setAvatarView] = useState(avatarApplied);
 	const isChanged = avatarApplied !== avatarView;
 
@@ -31,7 +37,11 @@ export default function HomePageAvatar() {
 		URL.revokeObjectURL(avatarView);
 	};
 	const handleApplyAvatar = () => {
-		setAvatarApplied(avatarView);
+		dispatch(
+			setInfo({
+				avatar: avatarView,
+			})
+		);
 
 		URL.revokeObjectURL(avatarApplied);
 	};
@@ -45,7 +55,7 @@ export default function HomePageAvatar() {
 					<p>Thay đổi ảnh</p>
 
 					<AvatarInput
-					{...(avatarApplied === avatarView ? { value: "" } : {})}
+						{...(avatarApplied === avatarView ? { value: "" } : {})}
 						accept="image/*"
 						onChange={handleChangeAvatar}
 					/>
