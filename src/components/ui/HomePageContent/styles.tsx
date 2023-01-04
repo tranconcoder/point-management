@@ -14,8 +14,9 @@ export const InfoContainer = styled.div`
 `;
 
 export const FormInfoContainer = styled.form`
+	margin-top: 2rem;
 `;
 
 export const PersonalInfoTitle = styled.h3`
-
-`
+	${mixins.text("#777", "1.6rem", "500", null, null)}
+`;
