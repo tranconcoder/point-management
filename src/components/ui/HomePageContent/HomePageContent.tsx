@@ -12,9 +12,7 @@ export default function HomePageContent() {
 	const initialValues = { firstName: "", lastName: "", major: "" };
 	const formik = useFormik({
 		initialValues,
-		onSubmit:()=>{
-
-		}
+		onSubmit: () => {},
 	});
 
 	return (
